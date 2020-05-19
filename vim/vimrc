@@ -1,0 +1,18 @@
+set pastetoggle=<F3>
+set laststatus=2
+set t_Co=256
+source ~/.vundler.vim
+
+
+filetype plugin indent on
+syntax on
+set number
+colorscheme jellybeans
+let g:airline_theme='sol'
+let g:airline#extensions#tabline#enabled = 1
+let g:aurline#extensions#tabline#fnamemod = ':t'
+
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
