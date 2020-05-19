@@ -1,0 +1,14 @@
+bit64
+nanotime
+data.table
+ggplot2
+gridExtra
+RColorBrewer
+devtools
+Rcpp
+stringr
+zoo
+lubridate
+jsonlite
+testthat
+roxygen2
