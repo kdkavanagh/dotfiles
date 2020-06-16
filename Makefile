@@ -6,9 +6,10 @@ all: tmux vim bash git ## Install everything
 ~/.tmux.conf: $(PWD)/tmux/tmux.conf
 ifeq (, $(shell which tmux))
 	@echo "Installing tmux"
-	@wget -O $target https://github.com/tmux/tmux/releases/download/3.1/tmux-3.1.tar.gz
-	@tar -zxf $target -C /tmp/tmux-build
-	@cd /tmp/tmux-build && ./configure && make && sudo make install
+	@wget -O /tmp/tmux.tgz https://github.com/tmux/tmux/releases/download/3.1/tmux-3.1.tar.gz
+	@mkdir -p /tmp/tmux-build
+	@tar -zxf /tmp/tmux.tgz -C /tmp/tmux-build
+	@cd /tmp/tmux-build/tmux-3.1 && ./configure && make && sudo make install
 endif
 	@rm -rf $@
 	@ln -s $< $@
