@@ -5,3 +5,7 @@ function epoch() {
     else echo $(date -d @`echo $epochTime | cut -c1-10`) and `echo $epochTime | cut -c 11- | xargs printf '%09d' | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta'` nanos
     fi
 }
+
+function epoch_to_date() {
+   echo $(date -d @`echo $1 | cut -c1-10` +'%Y-%m-%d %H:%M:%S')
+}
